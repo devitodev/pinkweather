@@ -8,7 +8,8 @@ body {
     font-family: 'Mako', sans-serif;
     background-image: url(../assets/img/bgweather.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+    background-position: center bottom;
     overflow: hidden;
     height: 100vh;
 }
@@ -20,7 +21,7 @@ body {
 
 .current-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -59,7 +60,7 @@ body {
 .current-info .others {
     display: flex;
     flex-direction: column;
-    background: rgba(24, 24, 27, 0.6);
+    background: rgba(50, 175, 177, 0.6);
     padding: 20px;
     border-radius: 15px;
     margin: 10px 0;
@@ -72,7 +73,7 @@ body {
 }
 
 .future-forecast {
-    background: rgba(24, 24, 27, .8);
+    background: rgba(253, 228, 227, .6);
     padding: 25px;
     position: fixed;
     bottom: 0;
@@ -91,7 +92,7 @@ body {
 
 .future-forecast .today .day {
     padding: 5px 15px;
-    background: #3c3c44;
+    background: rgba(255, 144, 175, .8);
     border-radius: 50px;
     text-align: center;
 }
@@ -118,7 +119,7 @@ body {
 
 .weather-forecast .weather-forecast-item .day {
     padding: 5px 15px;
-    background: #3c3c44;
+    background: rgba(255, 144, 175, .8);
     border-radius: 50px;
     text-align: center;
 }
@@ -127,6 +128,15 @@ body {
     font-weight: 100;
 }
 
+.current-info .humidity {
+    background: rgba(119, 57, 107, 0.6);
+}
+
+.current-info .pressure {
+    background: rgba(102, 221, 170, 0.4);
+}
+
+/* Media Query */
 @media only screen and (max-width:730px) {
 
     * {
@@ -140,6 +150,7 @@ body {
     .current-info {
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     .future-forecast{
