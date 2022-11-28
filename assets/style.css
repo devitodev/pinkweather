@@ -44,16 +44,20 @@ body {
 }
 
 .place-container {
-    text-align: end;
+    position:fixed;
+    right: 50px;
+    top: 20px;
+    width: 100px;
+
 }
 
 .place-container .time-zone {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 100;
 }
 
 .place-container .country {
-    font-size: 12px;
+    font-size: 30px;
     font-weight: 700;
 }
 
