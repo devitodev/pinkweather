@@ -39,13 +39,13 @@ body {
     margin-left: 20px;
 }
 
-.date-container, date {
+.date-container, .date {
     font-size: 30px;
 }
 
 .place-container {
     position:fixed;
-    right: 50px;
+    right: 70px;
     top: 20px;
     width: 100px;
 
@@ -54,11 +54,18 @@ body {
 .place-container .time-zone {
     font-size: 50px;
     font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .place-container .country {
     font-size: 30px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .current-info .others {
@@ -133,7 +140,7 @@ body {
 }
 
 .current-info .humidity {
-    background: rgba(119, 57, 107, 0.6);
+    background: rgba(255, 144, 175, .4);
 }
 
 .current-info .pressure {
@@ -164,8 +171,24 @@ body {
     }
 
     .place-container {
-        display: flex;
         position:fixed;
-        bottom: 250px;
+        right: 10px;
+        top: 20px;
+        width: 100px;
     }
+
+    .place-container .time-zone{
+        font-size: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .place-container .country{
+        font-size: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }

@@ -26,14 +26,21 @@ const months = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
 
 const weatherAPIKey = 'd38245ae19141a85c5b74ef46109d23c';
 
-pullWeatherData();
-function pullWeatherData () {
-    navigator.geolocation.getCurrentPosition((success) => {
-        
-        let {latitude, longitude} = success.coords;
 
-        fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${weatherAPIKey}`).then(res => res.json()).then(data => {
-            console.log(data)
-        })
-    })
-} 
+
+// Successfully got Waco's weather data
+var city;
+var queryURL1 = 'http://api.openweathermap.org/data/2.5/weather?q=' + '76000' + "&appid=" + weatherAPIKey;
+
+
+fetch(queryURL1)
+.then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+  })
+
+  
+
+
