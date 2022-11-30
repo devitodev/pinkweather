@@ -18,30 +18,43 @@
                 <div class="time-date" id="time">
                 </div>
                 
-                <div class="others humidity" id="current-weather-items" >
+                <div class="others temp" id="current-weather-items" >
+                    <div class="weather-item">
+                        <div class="current-city">
+                            City
+                        </div>
+                        <div id="temp"></div>
+                    </div>
+                <div class="others humidity" id="current-weather-items">
                     <div class="weather-item">
                         <div>Humidity</div>
-                        <div>95.2%</div>
-                    </div>
-                <div class="others pressure" id="current-weather-items">
-                    <div class="weather-item">
-                        <div>Pressure</div>
-                        <div>121</div>
+                        <div id="humidity">0</div>
                     </div>
                 <div class="others" id="current-weather-items wind">
                     <div class="weather-item">
                         <div>Wind Speed &nbsp </div>
-                        <div>22</div>
+                        <div id="wind-speed">0</div>
                     </div>
                 </div>
             </div>
-        </div>    
+           
+            <form id="cityForm">
+                <label for="cityname">City name:</label><br>
+                <input type="text" id="cityname" name="cityname"><br>
+                <button type="submit" id="submitBtn">Submit</button>
+            </form>
+
+        </div> 
+        
+        
+
     </div>
 
     <div class="place-container">
-        <div class="time-zone" id="time-zone">North America</div>
         <div class="country" id="country">USA</div>
     </div>
+
+    
 
     <div class="future-forecast">
         <div class="today" id="current-temp">

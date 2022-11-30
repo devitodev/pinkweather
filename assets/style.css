@@ -85,7 +85,7 @@ body {
 
 .future-forecast {
     background: rgba(253, 228, 227, .6);
-    padding: 25px;
+    padding: 10px;
     position: fixed;
     bottom: 0;
     display: flex;
@@ -139,12 +139,43 @@ body {
     font-weight: 100;
 }
 
-.current-info .humidity {
+.current-info .temp {
     background: rgba(255, 144, 175, .4);
 }
 
 .current-info .pressure {
     background: rgba(102, 221, 170, 0.4);
+}
+
+
+/* Thank you to 801priscila on codepen.io for the help with the button animation https://codepen.io/801priscila */
+#submitBtn {
+
+    width: 150px;
+    font-family: 'Anek Telugu', sans-serif;
+    font-weight: 600;
+    font-size: medium;
+    text-transform: uppercase;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #eee;
+    background: rgb(255, 144, 175);
+    border: 1px solid #eee;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(102, 221, 170, 0.4);
+}
+
+#submitBtn:hover,
+#submitBtn:focus,
+#submitBtn:active {
+    transition: 1s;
+    border: none;
+    text-transform: uppercase;
+    background: rgba(255, 144, 175, .8);
+    color: #0077b6;
+    border: 1px solid #0077b6;
+    transform: translateY(-0.25em);
+    cursor: pointer;
 }
 
 /* Media Query */
