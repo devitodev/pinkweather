@@ -72,7 +72,7 @@ body {
     display: flex;
     flex-direction: column;
     background: rgba(50, 175, 177, 0.6);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     margin: 10px 0;
     border: 1px solid #eee;
@@ -84,7 +84,7 @@ body {
 }
 
 .future-forecast {
-    background: rgba(253, 228, 227, .6);
+    background: rgba(253, 228, 227, .5);
     padding: 10px;
     position: fixed;
     bottom: 0;
@@ -143,14 +143,23 @@ body {
     background: rgba(255, 144, 175, .4);
 }
 
-.current-info .pressure {
-    background: rgba(102, 221, 170, 0.4);
+/* Thank you to 801priscila on codepen.io for the help with the button animation https://codepen.io/801priscila */
+
+
+#cityForm {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
+#cityname {
+    background-color: #faf0e6;
+}
 
-/* Thank you to 801priscila on codepen.io for the help with the button animation https://codepen.io/801priscila */
 #submitBtn {
-
     width: 150px;
     font-family: 'Anek Telugu', sans-serif;
     font-weight: 600;
