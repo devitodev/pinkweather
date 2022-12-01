@@ -201,12 +201,12 @@ body {
     .current-info {
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
 
     .future-forecast{
         justify-content: start;
-        align-items: none;
         overflow-y: scroll;
     }
 
