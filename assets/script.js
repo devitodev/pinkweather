@@ -59,23 +59,35 @@ function getWeatherAndPlace (cityName) {
 
 // Displaying weather and place on webpage
 function renderWeatherAndPlace(data) {
-      currentCity.text(data.name);
-      $('#temp').text(data.main.temp + ' °F');
-      $('#humidity').text(data.main.humidity + ' %');
-      $('#wind-speed').text(data.wind.speed + ' mph');
-      $('#country').text(data.sys.country)
+  currentCity.text(data.name);
+  $('#temp').text(data.main.temp + ' °F');
+  $('#humidity').text(data.main.humidity + ' %');
+  $('#wind-speed').text(data.wind.speed + ' mph');
+  $('#country').text(data.sys.country);
 }
 
+// Getting the forecast
 function getForecast (lat, lon) {
   var forecastPull = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=imperial&appid=${APIKey}`
   fetch(forecastPull)
   .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
+    .then(function (data2) {
+      console.log(data2);
+      renderForecast(data2);
     });
 }
+
+function renderForecast (data2) {
+      $('#tomorrow').text(data2.list[5].main.temp + '°F')
+} 
+
+
+
+
+
+
  
 
 
