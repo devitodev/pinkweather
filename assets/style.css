@@ -22,7 +22,9 @@ body {
 .current-info {
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .date-container {
@@ -86,11 +88,10 @@ body {
 .future-forecast {
     background: rgba(253, 228, 227, .5);
     padding: 10px;
-    position: fixed;
     bottom: 0;
     display: flex;
+    width: 100vw;
     color: white;
-    width: 100%;
     align-items: center;
     justify-content: center;
 }

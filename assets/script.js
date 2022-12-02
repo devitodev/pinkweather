@@ -80,19 +80,35 @@ function getForecast (lat, lon) {
 }
 
 function renderForecast (data2) {
+        // rendering forecast temp
       $('#tomorrow').text(data2.list[5].main.temp + '°F');
       $('#nextday1').text(data2.list[13].main.temp + '°F');
       $('#nextday2').text(data2.list[21].main.temp + '°F');
       $('#nextday3').text(data2.list[29].main.temp + '°F');
       $('#nextday4').text(data2.list[37].main.temp + '°F');
+      // rendering weather conditions
       $('#tomorrowweather').text(data2.list[5].weather[0].main);
       $('#nextdayweather1').text(data2.list[13].weather[0].main);
       $('#nextdayweather2').text(data2.list[21].weather[0].main);
       $('#nextdayweather3').text(data2.list[29].weather[0].main);
       $('#nextdayweather4').text(data2.list[37].weather[0].main);
+      // rendering forecast humidity
+      $('#tomorrowhumidity').text('Humidity ' + data2.list[5].main.humidity + ' %');
+      $('#nextdayhumidity1').text('Humidity ' + data2.list[13].main.humidity + ' %');
+      $('#nextdayhumidity2').text('Humidity ' + data2.list[21].main.humidity + ' %');
+      $('#nextdayhumidity3').text('Humidity ' + data2.list[29].main.humidity + ' %');
+      $('#nextdayhumidity4').text('Humidity ' + data2.list[37].main.humidity + ' %');
+      // rendering forecast windspeed
+      $('#tomorrowwindspeed').text('Wind Speed ' + data2.list[5].wind.speed + ' mph');
+      $('#nextdaywindspeed1').text('Wind Speed ' + data2.list[13].wind.speed + ' mph');
+      $('#nextdaywindspeed2').text('Wind Speed ' + data2.list[21].wind.speed + ' mph');
+      $('#nextdaywindspeed3').text('Wind Speed ' + data2.list[29].wind.speed + ' mph');
+      $('#nextdaywindspeed4').text('Wind Speed ' + data2.list[37].wind.speed + ' mph');
+      // rendering the icon
+     
+      
       
 } 
-
 
 
 
