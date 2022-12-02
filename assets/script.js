@@ -86,12 +86,12 @@ function renderForecast (data2) {
       $('#nextday2').text(data2.list[21].main.temp + '°F');
       $('#nextday3').text(data2.list[29].main.temp + '°F');
       $('#nextday4').text(data2.list[37].main.temp + '°F');
-      // rendering weather conditions
-      $('#tomorrowweather').text(data2.list[5].weather[0].main);
-      $('#nextdayweather1').text(data2.list[13].weather[0].main);
-      $('#nextdayweather2').text(data2.list[21].weather[0].main);
-      $('#nextdayweather3').text(data2.list[29].weather[0].main);
-      $('#nextdayweather4').text(data2.list[37].weather[0].main);
+      // // rendering weather conditions
+      // $('#tomorrowweather').text(data2.list[5].weather[0].main);
+      // $('#nextdayweather1').text(data2.list[13].weather[0].main);
+      // $('#nextdayweather2').text(data2.list[21].weather[0].main);
+      // $('#nextdayweather3').text(data2.list[29].weather[0].main);
+      // $('#nextdayweather4').text(data2.list[37].weather[0].main);
       // rendering forecast humidity
       $('#tomorrowhumidity').text('Humidity ' + data2.list[5].main.humidity + ' %');
       $('#nextdayhumidity1').text('Humidity ' + data2.list[13].main.humidity + ' %');
