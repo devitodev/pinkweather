@@ -105,6 +105,11 @@ function renderForecast (data2) {
       $('#nextdaywindspeed3').text('Wind Speed ' + data2.list[29].wind.speed + ' mph');
       $('#nextdaywindspeed4').text('Wind Speed ' + data2.list[37].wind.speed + ' mph');
       // rendering the icon
+      var iconCode = data2.list[5].weather[0].icon;
+      console.log(iconCode)
+      var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x" + ".png";
+      console.log(iconUrl)
+      $('#icon-spot2').attr('src', iconUrl);
      
       
       
