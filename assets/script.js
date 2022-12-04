@@ -64,6 +64,11 @@ function renderWeatherAndPlace(data) {
   $('#humidity').text(data.main.humidity + ' %');
   $('#wind-speed').text(data.wind.speed + ' mph');
   $('#country').text(data.sys.country);
+
+  var iconCodeToday = data.weather[0].icon
+      var iconurlToday = "http://openweathermap.org/img/w/" + iconCodeToday + ".png";
+      $('#wicontoday').attr('src', iconurlToday);
+  
 }
 
 // Getting the forecast
@@ -86,12 +91,6 @@ function renderForecast (data2) {
       $('#nextday2').text(data2.list[21].main.temp + '°F');
       $('#nextday3').text(data2.list[29].main.temp + '°F');
       $('#nextday4').text(data2.list[37].main.temp + '°F');
-      // // rendering weather conditions
-      // $('#tomorrowweather').text(data2.list[5].weather[0].main);
-      // $('#nextdayweather1').text(data2.list[13].weather[0].main);
-      // $('#nextdayweather2').text(data2.list[21].weather[0].main);
-      // $('#nextdayweather3').text(data2.list[29].weather[0].main);
-      // $('#nextdayweather4').text(data2.list[37].weather[0].main);
       // rendering forecast humidity
       $('#tomorrowhumidity').text('Humidity ' + data2.list[5].main.humidity + ' %');
       $('#nextdayhumidity1').text('Humidity ' + data2.list[13].main.humidity + ' %');
@@ -104,16 +103,74 @@ function renderForecast (data2) {
       $('#nextdaywindspeed2').text('Wind Speed ' + data2.list[21].wind.speed + ' mph');
       $('#nextdaywindspeed3').text('Wind Speed ' + data2.list[29].wind.speed + ' mph');
       $('#nextdaywindspeed4').text('Wind Speed ' + data2.list[37].wind.speed + ' mph');
-      // rendering the icon
-      var iconCode = data2.list[5].weather[0].icon;
-      console.log(iconCode)
-      var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x" + ".png";
-      console.log(iconUrl)
-      $('#icon-spot2').attr('src', iconUrl);
-     
+
+
+      // rendering forecast icons
+      var iconCodeTmrw = data2.list[5].weather[0].icon
+      var iconurlTmrw = "http://openweathermap.org/img/w/" + iconCodeTmrw + ".png";
+      $('#wicontomorrow').attr('src', iconurlTmrw);
+
+      var iconCode1 = data2.list[13].weather[0].icon
+      console.log('here', iconCode1)
+      var iconurl1 = "http://openweathermap.org/img/w/" + iconCode1 + ".png";
+      $('#wicon1').attr('src', iconurl1);
+
+      var iconCode2= data2.list[21].weather[0].icon
+      var iconurl2 = "http://openweathermap.org/img/w/" + iconCode2 + ".png";
+      $('#wicon2').attr('src', iconurl2);
+
+      var iconCode3 = data2.list[29].weather[0].icon
+      var iconurl3 = "http://openweathermap.org/img/w/" + iconCode3 + ".png";
+      $('#wicon3').attr('src', iconurl3);
+
+      var iconCode4 = data2.list[37].weather[0].icon
+      var iconurl4 = "http://openweathermap.org/img/w/" + iconCode4 + ".png";
+      $('#wicon4').attr('src', iconurl4);
       
+      
+
+
+
+
+    // rendering icons attempt #2
+    // $('#nextdayicon1').text(data2.list[5].weather[0].icon)
+    // $('#icon-spot2').text(data2.list[13].weather[0].icon)
+    // $('.icon-spot3').text(data2.list[13].weather[0].icon)
+  
+
+
+    // rendering icons attempt #3
+    // var iconCode1 = data2.list[5].weather[0].icon
+    // var iconUrl = "http://openweathermap.org/img/wn/" + iconCode1 + "@2x" + ".png";
+    // $('#icon-spot2').append(iconUrl);
+
+
       
 } 
+
+
+// rendering the icon attempts #1 ---this is very messy and doesn't work
+   
+//       function getIcons (cityName) {
+//       var iconType = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}`
+//       console.log(iconType)
+//       fetch(iconType)
+//       .then(function (response) {
+//           return response.json();
+//         })
+//         .then(function (data) {
+//           console.log(data);
+//           var {lat, lon} = data.coord;
+//           renderIcons(data);
+//         });
+//     };
+
+// function renderIcon (data, lat, lon) {
+// var iconCode = data.weather[0].icon;
+//       var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x" + ".png";
+//       $('#icon=spot1').attr('src', iconUrl);
+//       $('.icon-spot3').text('src', iconUrl);
+// }
 
 
 
@@ -123,19 +180,6 @@ function renderForecast (data2) {
 
 
 
-
-
-// var cityLocationAPI = 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}'
-
-// Successfully got Waco's weather data if city is replaced with 76000 (waco's city code)
-// var queryURL1 = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + "&appid=" + weatherAPIKey;
-// fetch(queryURL1)
-// .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log(data)
-//   })
 
 
 
