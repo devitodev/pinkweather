@@ -79,6 +79,14 @@ body {
     border: 1px solid #eee;
 }
 
+.current-info .others .wind {
+    background-color: rgb(186, 184, 184);
+}
+
+.temp .wind {
+    background: rgb(186, 184, 184);
+}
+
 .current-info .others .weather-item {
     display: flex;
     justify-content: space-between;
