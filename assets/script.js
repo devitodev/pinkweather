@@ -6,6 +6,7 @@ const country = $('country');
 const weatherForecast = $('weather-forecast');
 const currentTemp = $('current-temp');
 const currentCity = $('.current-city');
+var searchHistory = [];
 
 
 // Setting and displaying date and time
@@ -54,8 +55,49 @@ function getWeatherAndPlace (cityName) {
         renderWeatherAndPlace(data);
         var {lat, lon} = data.coord;
         getForecast(lat,lon);
+        saveHistory(cityName);
+        
       });
 };
+
+// Getting the city name into local storage
+function saveHistory (cityName) {
+     if (searchHistory.indexOf(cityName) !== -1) {
+      return
+     }
+     searchHistory.push(cityName);
+     localStorage.setItem('cityHistory', JSON.stringify(searchHistory));
+     renderCityHistory()
+}
+
+// Displaying city name on page with a button
+function renderCityHistory () {
+  $('.history').empty();
+  for (var i = searchHistory.length-1; i >= 0; i--) {
+    var btn = $('<button/>');
+    btn.attr('data-search', searchHistory[i]);
+    btn.text(searchHistory[i]);
+    btn.addClass('btn-history');
+
+    $('.history').append(btn);
+};
+};
+
+function searchHistoryClick(event) {
+      if (!event.target.matches('.btn-history')) {
+        return
+      };
+      console.log('click')
+      var btn = event.target
+      var cityName = btn.data('data-search');
+      console.log(cityName)
+      getWeatherAndPlace(cityName);
+
+}
+
+$('.history').on('click', searchHistoryClick)
+
+
 
 // Displaying weather and place on webpage
 function renderWeatherAndPlace(data) {
@@ -127,50 +169,17 @@ function renderForecast (data2) {
       var iconurl4 = "http://openweathermap.org/img/w/" + iconCode4 + ".png";
       $('#wicon4').attr('src', iconurl4);
       
-      
-
-
-
-
-    // rendering icons attempt #2
-    // $('#nextdayicon1').text(data2.list[5].weather[0].icon)
-    // $('#icon-spot2').text(data2.list[13].weather[0].icon)
-    // $('.icon-spot3').text(data2.list[13].weather[0].icon)
-  
-
-
-    // rendering icons attempt #3
-    // var iconCode1 = data2.list[5].weather[0].icon
-    // var iconUrl = "http://openweathermap.org/img/wn/" + iconCode1 + "@2x" + ".png";
-    // $('#icon-spot2').append(iconUrl);
 
 
       
 } 
 
+// Making history log/btn
 
-// rendering the icon attempts #1 ---this is very messy and doesn't work
-   
-//       function getIcons (cityName) {
-//       var iconType = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}`
-//       console.log(iconType)
-//       fetch(iconType)
-//       .then(function (response) {
-//           return response.json();
-//         })
-//         .then(function (data) {
-//           console.log(data);
-//           var {lat, lon} = data.coord;
-//           renderIcons(data);
-//         });
-//     };
 
-// function renderIcon (data, lat, lon) {
-// var iconCode = data.weather[0].icon;
-//       var iconUrl = "http://openweathermap.org/img/wn/" + iconCode + "@2x" + ".png";
-//       $('#icon=spot1').attr('src', iconUrl);
-//       $('.icon-spot3').text('src', iconUrl);
-// }
+
+
+
 
 
 
