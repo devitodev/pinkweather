@@ -71,31 +71,27 @@ function saveHistory (cityName) {
 }
 
 // Displaying city name on page with a button
-function renderCityHistory () {
-  $('.history').empty();
-  for (var i = searchHistory.length-1; i >= 0; i--) {
-    var btn = $('<button/>');
-    btn.attr('data-search', searchHistory[i]);
-    btn.text(searchHistory[i]);
-    btn.addClass('btn-history');
+function renderCityHistory() {
+  $('.history').empty()
+  for (var i = searchHistory.length - 1; i >= 0; i--) {
+    var btn = $('<button/>')
+    btn.attr('data-search', searchHistory[i])
+    btn.text(searchHistory[i])
+    btn.addClass('btn-history')
 
-    $('.history').append(btn);
-};
-};
-
-function searchHistoryClick(event) {
-      if (!event.target.matches('.btn-history')) {
-        return
-      };
-      console.log('click')
-      var btn = event.target
-      var cityName = btn.data('data-search');
-      console.log(cityName)
-      getWeatherAndPlace(cityName);
-
+    $('.history').append(btn)
+  }
 }
 
-$('.history').on('click', searchHistoryClick)
+function searchHistoryClick(event) {
+  if (!event.target.matches('.btn-history')) {
+    return
+  }
+
+  var b = event.target
+  var cityName = b.getAttribute('data-search')
+  getWeatherAndPlace(cityName)
+}
 
 
 
@@ -153,7 +149,6 @@ function renderForecast (data2) {
       $('#wicontomorrow').attr('src', iconurlTmrw);
 
       var iconCode1 = data2.list[13].weather[0].icon
-      console.log('here', iconCode1)
       var iconurl1 = "http://openweathermap.org/img/w/" + iconCode1 + ".png";
       $('#wicon1').attr('src', iconurl1);
 
